@@ -1,59 +1,27 @@
 # AngularSignalsHandson
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+- run `npm install` to install the dependencies
+- run `ng serve` to run the application
 
-## Development server
 
-To start a local development server, run:
+1. Add a counter component somewhere in the app that uses signals. Make sure the count is displayed, there is a + and a - button to increase and decrease the count.
 
-```bash
-ng serve
-```
+1. Add computed signals to display the double count (count * 2) and if the count is even or odd in the counter component. 
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. Add an effect to the counter component that logs the count to the console. Adjust the increase function to update the count signal multiple times and verify that the effect will only run after all updates are finished.
 
-## Code scaffolding
+1. Run the migrations to convert inputs to signals and outputs to the new output function and use the --insert-todos flag to create TODOs for all things that could not be migrated (https://angular.dev/reference/migrations)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. Resolve the todo's by hand. (see hints at the end of this file if your stuck)
 
-```bash
-ng generate component component-name
-```
+1. Use a computed signal to display the price in the cart-item component instead of using a getter.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Replace RxJS in the cart service for signals.
 
-```bash
-ng generate --help
-```
+## Advanced
+1. Use an effect to persist the products in the cart to localStorage.
 
-## Building
+1. Try the new Resource to fetch data from the API
 
-To build the project run:
+## Hints
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

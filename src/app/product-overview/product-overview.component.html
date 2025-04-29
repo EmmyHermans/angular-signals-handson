@@ -1,0 +1,25 @@
+<div class="product-overview">
+  <mat-form-field class="category-filter">
+    <mat-label>Filter by Category</mat-label>
+    <mat-select [(ngModel)]="selectedCategory" (selectionChange)="onCategoryChange()">
+      @for (category of categories; track category) {
+        <mat-option [value]="category">{{ category | titlecase }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-grid-list cols="3" gutterSize="16">
+    @for (product of displayedProducts; track product.id) {
+      <mat-grid-tile>
+        <mat-card class="product-card" [routerLink]="[product.id]">
+          <img class="card-image" mat-card-image [src]="product.image" [alt]="product.title" />
+          <mat-card-content class="card-content">
+            <p class="product-title">{{ product.title }}</p>
+            <p class="price">${{ product.price }}</p>
+            <p class="category">{{ product.category }}</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    }
+  </mat-grid-list>
+</div>

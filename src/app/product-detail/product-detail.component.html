@@ -1,0 +1,29 @@
+@if (product$ | async; as product) {
+  @if (error) {
+    <div class="error-message">
+      {{ error }}
+    </div>
+  } @else {
+    <div class="product-detail">
+      <button mat-raised-button color="primary" class="back-nav" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Products
+      </button>
+      <div class="image-section">
+        <div class="product-image">
+          <img class="product-img" [src]="product.image" [alt]="product.title" />
+        </div>
+        <button mat-raised-button color="accent" class="add-to-cart-btn" (click)="addToCart(product)">
+          <mat-icon>add_shopping_cart</mat-icon>
+          Add to Cart
+        </button>
+      </div>
+      <div class="product-info">
+        <p class="product-title">{{ product.title }}</p>
+        <p class="category">{{ product.category }}</p>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">€{{ product.price }}</p>
+      </div>
+    </div>
+  }
+}
