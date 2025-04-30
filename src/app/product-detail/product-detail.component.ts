@@ -30,13 +30,7 @@ export class ProductDetailComponent {
   }
 
   @Input()
-  set id(value: string | null) {
-    if (!value) {
-      this.error = 'Product ID is required';
-      this.product$ = of();
-      return;
-    }
-
+  set id(value: string) {
     const numId = Number(value);
     if (isNaN(numId)) {
       this.error = 'Invalid product ID';
